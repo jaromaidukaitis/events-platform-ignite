@@ -9,7 +9,7 @@ const GET_LESSON_BY_SLUG_QUERY = gql`
   query GetLessoBySlug ($slug: String) {
     lesson(where: {slug: $slug}) {
       title
-      viodeoId
+      videoId
       description
       teacher {
         bio
@@ -43,6 +43,8 @@ export function Video(props: VideoProps) {
       slug: props.lessonSlug
     }
   })
+
+  console.log(data)
 
   if (!data) {
     return (
